@@ -1,0 +1,36 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+body {
+  margin: 2em;
+}
+
+.outer-outlet {
+  padding: 8px;
+  border: 1px solid red;
+  height: 170px;
+  width: 360px;
+}
+
+.inner-outlet {
+  padding: 8px;
+  border: 1px solid blue;
+}
+
+.main-div {
+    margin: 35px;
+    border: 1px solid #000;
+    background: #E7EDF0;
+    padding: 35px;
+}
+
+.hr-line {
+    border-top: 2px solid #000 !important;
+}
+
+.home {
+    border: solid 1px black;
+    padding: 20px;
+}
