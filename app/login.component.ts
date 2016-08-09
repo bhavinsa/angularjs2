@@ -3,7 +3,7 @@ import {DemoService} from './demo.service';
 import {Observable} from 'rxjs/Rx';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { SignupComponent } from './signup.component';
-import { Directive } from './directive';
+import {Directive} from './header.directive';
 
 @Component({
   selector: 'login',

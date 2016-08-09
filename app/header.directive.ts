@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-  selector: 'directive',
-  templateUrl: 'app/directive.html',
+  selector: 'header-directive',
+  templateUrl: 'app/header_directive.html',
   host: {
     'class': 'panel-group'
   },
