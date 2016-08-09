@@ -2,9 +2,12 @@ import { provideRouter, RouterConfig } from '@angular/router';
 
 import { AboutComponent, AboutHomeComponent, AboutItemComponent } from './about.component';
 import { HomeComponent } from './home.component';
+import { LoginComponent } from './login.component';
+import { SignupComponent } from './signup.component';
 
 export const routes: RouterConfig = [
-  { path: '', component: HomeComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: '', component: LoginComponent },
   {
     path: 'about',
     component: AboutComponent,

@@ -12,6 +12,7 @@ export class HomeComponent {
     public data;
     public num = 1;
     public randomNum = 0;
+    public imageSrc = 'http://www.planwallpaper.com/static/images/518164-backgrounds.jpg';
     constructor(private _demoService: DemoService) { }
     
  ngOnInit() {
