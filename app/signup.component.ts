@@ -27,7 +27,7 @@ export class SignupComponent {
  }
  
  onSubmit() {
-      if(this._utilService.isDefined(this.signupData.username && this._utilService.isDefined(this.signupData.password) && this._utilService.isDefined(this.signupData.email)){
+      if(this._utilService.isDefined(this.signupData.username) && this._utilService.isDefined(this.signupData.password) && this._utilService.isDefined(this.signupData.email)){
           //Sign up Process - WS call.
           this._userService.createUser(this.signupData).subscribe(
           // the first argument is a function which runs on success
