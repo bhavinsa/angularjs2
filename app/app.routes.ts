@@ -8,6 +8,7 @@ import { SignupComponent } from './signup.component';
 export const routes: RouterConfig = [
   { path: 'signup', component: SignupComponent },
   { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   {
     path: 'about',
     component: AboutComponent,

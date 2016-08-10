@@ -32,6 +32,7 @@ export class HomeComponent {
   }
 
  getData(){
+    //var self =this;
     this._demoService.getData().subscribe(
       // the first argument is a function which runs on success
       data => { this.data = data.data.results},

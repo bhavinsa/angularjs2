@@ -3,12 +3,12 @@
     
 <h3>Books</h3>
 <ul>
-    <li *ngFor="let book of books">{{book.title}}</li>
+    <li *ngFor="let book of books; let i = index">{{book.title}} -- {{i}}</li>
 </ul>
 
 <h3>Banks</h3>
 <ul>
-<li *ngFor="let iteam of data">{{iteam.name}}</li>
+<li *ngFor="let iteam of data; let i = index">{{iteam.name}} -- {{i}}</li>
 </ul>
 
 <h6> Enter Number Length : <input type="text" [(ngModel)]="num" /> </h6>

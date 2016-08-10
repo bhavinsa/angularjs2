@@ -12,12 +12,22 @@ import { LoginComponent } from './login.component';
 })
 
 export class SignupComponent {
-    
-    constructor(private _demoService: DemoService) { }
+    signupData: any = {
+        name: '',
+        password: '',
+        email:''
+    };
+
+    constructor(private _demoService: DemoService) { 
+        
+    }
     
  ngOnInit() {
   
   }
-    
+ 
+ public onSubmit() {
+       alert('Your setting: ' + JSON.stringify(this.signupData));
+     }
 
 }
