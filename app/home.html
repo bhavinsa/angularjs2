@@ -8,7 +8,8 @@
 
 <h3>Banks</h3>
 <ul>
-<li *ngFor="let iteam of data; let i = index">{{iteam.name}} -- {{i}}</li>
+<li *ngFor="let iteam of data; let i = index; let e = even; let o = odd; let l = last; let f = first">
+    {{iteam.name}} -- Index is: {{i}} -- Is Even :{{e}} -- Is Odd :{{o}} -- Is last : {{l}} -- Is first : {{f}}</li>
 </ul>
 
 <h6> Enter Number Length : <input type="text" [(ngModel)]="num" /> </h6>
