@@ -138,3 +138,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+
+.welcome {
+    background: #6b8e23 none repeat scroll 0 0;
+    color: #f8f8f8;
+    float: left;
+    font-size: 20px;
+    padding: 20px;
+}

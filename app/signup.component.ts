@@ -33,7 +33,8 @@ export class SignupComponent {
           // the first argument is a function which runs on success
           data => { 
                 localStorage.setItem('id', data.user._id);
-                this.router.navigate(['/home']);
+                localStorage.setItem('username', data.user.username);
+                this.router.navigate(['/dashboard']);
           },
           // the second argument is a function which runs on error
           err => {
@@ -42,7 +43,7 @@ export class SignupComponent {
               alert(Err.error);
           },
           // the third argument is a function which runs on completion
-          () => console.log('done loading foods')
+          () => console.log('done loading.')
             ); 
       }else{
       alert('Provide valid details.');

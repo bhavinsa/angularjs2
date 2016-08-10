@@ -15,4 +15,12 @@ export class UserService {
         let body = {'email' : data.email , 'username' : data.username, 'password' :data.password};
         return this.http.post('http://192.168.1.85:1111/api/user', body, headers).map((res:Response) => res.json());
     }
+    
+    loginUser(data) {
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+        let body = {'username' : data.username, 'password' :data.password};
+        return this.http.post('http://192.168.1.85:1111/api/authenticate', body, headers).map((res:Response) => res.json());
+    }
+    
 }

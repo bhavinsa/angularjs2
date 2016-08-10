@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
+import { UtilService } from './util.service';
 @Component({
   selector: 'header-directive',
   templateUrl: 'app/header_directive.html',
@@ -10,6 +10,11 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   directives: [ROUTER_DIRECTIVES],
 })
 export class Directive {
- 
+     constructor(public router: Router) {}
+    
+    public logout(){
+        localStorage.setItem('id', '');
+        this.router.navigate(['/']);
+    }
 }
 
