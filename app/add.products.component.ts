@@ -27,7 +27,9 @@ export class AddProductComponent {
     constructor(public _utilService: UtilService, public _userService: UserService, private _demoService: DemoService, public router: Router) { }
     
     ngOnInit() {
-    
+         if(!this._utilService.isDefined(localStorage.getItem('id'))){
+         this.router.navigate(['/']);
+         }
     } 
     fileChangeEvent(fileInput: any){
         this.filesToUpload = <Array<File>> fileInput.target.files;

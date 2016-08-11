@@ -10,18 +10,20 @@ import { UserService } from './apis/user.service';
   selector: 'get-product',
   templateUrl: 'app/get_products.html',
   styles: ['styles.css'],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, Directive],
 })
 
 export class GetProductsComponent { 
   public id: any;
   paramsSub: any;
   
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, public _utilService: UtilService, public router: Router) { }
   
   ngOnInit() {
+    if(!this._utilService.isDefined(localStorage.getItem('id'))){
+        this.router.navigate(['/']);
+    }
     this.paramsSub = this.activatedRoute.params.subscribe(params => this.id = + params['id']);
-    console.log('id -->' + this.id);
   }
   
   ngOnDestroy() {
