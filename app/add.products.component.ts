@@ -56,3 +56,4 @@ export class AddProductComponent {
             alert('Provide valid details.');
             }     
   }
+}
