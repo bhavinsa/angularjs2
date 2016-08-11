@@ -5,11 +5,14 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login.component';
 import { SignupComponent } from './signup.component';
 import { DashboardComponent } from './dashboard.component';
+import { AddProductComponent } from './add.products.component';
+
 
 export const routes: RouterConfig = [
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'add_product', component: AddProductComponent },
   { path: 'home', component: HomeComponent },
   {
     path: 'about',
