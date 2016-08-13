@@ -1,6 +1,22 @@
 <header-directive></header-directive>
-<div class="">
-  <div class="welcome">
-      <p>Welcome {{username}}</p>
-  </div>
-</div>
+
+<table class="table product-list" align="center">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr *ngFor="let product of products; let i = index;">
+    <td>{{ i }} {{product._id}}</td> 
+    <td>{{ product.name }}</td>
+     <td>{{ product.description }}</td>
+     <td> <img src="http://localhost:1111/product_images/{{ product.img_name }}" alt="Image"></td>
+    <td> <a [routerLink]="['/get_product',product._id]"> Details</a></td>
+</tr>
+  </tbody>
+</table>

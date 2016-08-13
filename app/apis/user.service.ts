@@ -29,4 +29,10 @@ export class UserService {
         return this.http.post('http://192.168.1.85:1111/api/product', data, headers).map((res:Response) => res.json());
     }
     
+    getProducts(data) {
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+        let body = {'_id' : data};
+        return this.http.post('http://192.168.1.85:1111/api/product/getProducts', body, headers).map((res:Response) => res.json());
+    }
 }

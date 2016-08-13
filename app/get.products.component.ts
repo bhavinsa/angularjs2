@@ -15,7 +15,7 @@ import { UserService } from './apis/user.service';
 
 export class GetProductsComponent { 
   public id: any;
-  paramsSub: any;
+  public paramsSub: any;
   
   constructor(private activatedRoute: ActivatedRoute, public _utilService: UtilService, public router: Router) { }
   

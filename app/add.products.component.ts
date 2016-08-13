@@ -40,13 +40,17 @@ export class AddProductComponent {
             var formData: any = new FormData();
             
             for(var i = 0; i < this.filesToUpload.length; i++) {
-                formData.append("product_img", this.filesToUpload[i], this.filesToUpload[i].name);
+                formData.append("product_image", this.filesToUpload[i], this.filesToUpload[i].name);
             }
             formData.append('name', this.productData.name); 
             formData.append('description', this.productData.description);
+            formData.append('id', localStorage.getItem('id'));
+            
             this._userService.addProduct(formData).subscribe(
-            data => {  
-                
+            data => { 
+                if(this._utilService.isDefined(data.product._id)){
+                    alert('Product added successfully.');
+                }
             },
             err => {
               var Err = JSON.parse(err._body);
