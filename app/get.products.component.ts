@@ -14,7 +14,7 @@ import { UserService } from './apis/user.service';
 })
 
 export class GetProductsComponent { 
-  public id: any;
+  public id: any = '';
   public paramsSub: any;
   
   constructor(private activatedRoute: ActivatedRoute, public _utilService: UtilService, public router: Router) { }
@@ -23,11 +23,13 @@ export class GetProductsComponent {
     if(!this._utilService.isDefined(localStorage.getItem('id'))){
         this.router.navigate(['/']);
     }
-    this.paramsSub = this.activatedRoute.params.subscribe(params => this.id = + params['id']);
+    console.log(this.activatedRoute.params._value.id);
+    this.id = this.activatedRoute.params._value.id;
+    //this.paramsSub = this.activatedRoute.params.subscribe(params => this.id = + //this.activatedRoute.params._value.id);
   }
   
   ngOnDestroy() {
-    this.paramsSub.unsubscribe();
+    //this.paramsSub.unsubscribe();
   }
 }
 
