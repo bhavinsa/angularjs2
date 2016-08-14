@@ -3,17 +3,21 @@
     
 <h3>Books</h3>
 <ul>
-    <li *ngFor="let book of books">{{book.title}}</li>
+    <li *ngFor="let book of books; let i = index">{{book.title}} -- {{i}}</li>
 </ul>
 
 <h3>Banks</h3>
 <ul>
-<li *ngFor="let iteam of data">{{iteam.name}}</li>
+<li *ngFor="let iteam of data; let i = index; let e = even; let o = odd; let l = last; let f = first">
+    {{iteam.name}} -- Index is: {{i}} -- Is Even :{{e}} -- Is Odd :{{o}} -- Is last : {{l}} -- Is first : {{f}}</li>
 </ul>
 
 <h6> Enter Number Length : <input type="text" [(ngModel)]="num" /> </h6>
 <a class="btn btn-primary" role="button" (click)="getRandomNum()">Give me a Number!</a>
 <h3 *ngIf="randomNum > 0"> {{randomNum}}</h3>
 <h3 *ngIf="randomNum == 0"> length has not been declared</h3> 
-    
+ 
+<div class="img-cls">
+<img [src]="imageSrc">
+</div>
 </div>

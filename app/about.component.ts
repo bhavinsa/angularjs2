@@ -18,7 +18,7 @@ export class AboutItemComponent {
   constructor(private activatedRoute: ActivatedRoute) { }
   
   ngOnInit() {
-    this.paramsSub = this.activatedRoute.params.subscribe(params => this.id = +params['id']);
+    this.paramsSub = this.activatedRoute.params.subscribe(params => this.id = + params['id']);
   }
   
   ngOnDestroy() {

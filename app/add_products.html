@@ -1,0 +1,13 @@
+<header-directive></header-directive>
+<div class="login-page">
+  <div class="form">
+    <p class="add-product"> Add Project</p>  
+    <form (ngSubmit)="onSubmit()" class="login-form">
+      <input type="text" [(ngModel)]="productData.name" placeholder="name"/>
+      <input type="text" [(ngModel)]="productData.description" placeholder="description"/>
+       <input type="file" multiple (change)="fileChangeEvent($event)" name="product_image" placeholder="Upload file..." />
+<!--       <button type="button" (click)="upload()">Upload</button>-->
+      <button type="button" (click)="addProduct()">Add</button>
+    </form>
+  </div>
+</div>
