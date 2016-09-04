@@ -16,11 +16,17 @@ import { UserService } from './apis/user.service';
 export class GetProductsComponent { 
   public id: any = '';
   public paramsSub: any;
-  
-  constructor(private activatedRoute: ActivatedRoute, public _utilService: UtilService, public router: Router) {
-    //console.log(this.activatedRoute.params._value.id);
-    //this.id = this.activatedRoute.params._value.id;
-    
+  public productData = {
+      name: '',
+      description: '',
+      img_name: '',
+      created: ''
+  }
+  constructor(private activatedRoute: ActivatedRoute, public _utilService: UtilService, public router: Router, public _userService: UserService) {
+    this.id = this.activatedRoute.snapshot.params['id'];
+    if(this._utilService.isDefined(this.id)){
+       this.getProductDetails();
+    }
   }
   
   ngOnInit() {
@@ -28,6 +34,23 @@ export class GetProductsComponent {
         this.router.navigate(['/']);
     }
     //this.paramsSub = this.activatedRoute.params.subscribe(params => this.id = + //this.activatedRoute.params._value.id);
+  }
+    
+  public getProductDetails(){
+       this._userService.getProductDetails(this.id).subscribe(
+            data => {
+                 if(this._utilService.isDefined(data.product)){
+                     this.productData = data.product;
+                 }else{
+                     alert("Data not found.");
+                 }
+            },
+            err => {
+              var Err = JSON.parse(err._body);
+              alert(Err.error);
+            },
+            () => console.log('done loading.')
+            );
   }
   
   ngOnDestroy() {

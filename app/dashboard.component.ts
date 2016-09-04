@@ -6,6 +6,7 @@ import {SignupComponent } from './signup.component';
 import {Directive} from './header.directive';
 import { UtilService } from './util.service';
 import { UserService } from './apis/user.service';
+import * as io from "socket.io-client";
 
 @Component({
   selector: 'dashboard',
@@ -21,6 +22,18 @@ export class DashboardComponent {
     constructor(public _utilService: UtilService, public _userService: UserService, public router: Router) { }
     
  ngOnInit() {
+     
+     //Socket Connection.
+     var socket = io.connect('http://localhost:1227');
+     socket.on('connect', function(){
+     console.log('connect')
+     });
+     
+     socket.emit('echo',{'user_id':'1','message':'test'});
+     socket.on('echo',function(data){
+		 console.log(data);
+	 });
+     
     if(!this._utilService.isDefined(localStorage.getItem('id'))){
         this.router.navigate(['/']);
     }else{
@@ -30,7 +43,7 @@ export class DashboardComponent {
     
   }
 
-    public getProducts(id){
+public getProducts(id){
        this._userService.getProducts(id).subscribe(
             data => {  
                 this.products = data.product;
@@ -41,6 +54,6 @@ export class DashboardComponent {
             },
             () => console.log('done loading.')
             );
-    }
+  }
     
 }

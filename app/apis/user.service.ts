@@ -35,4 +35,11 @@ export class UserService {
         let body = {'_id' : data};
         return this.http.post('http://localhost:1111/api/product/getProducts', body, headers).map((res:Response) => res.json());
     }
+    
+    getProductDetails(data) {
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+        let body = {'_id' : data};
+        return this.http.post('http://localhost:1111/api/product/getProductDetails', body, headers).map((res:Response) => res.json());
+    }
 }

@@ -1,2 +1,15 @@
 <header-directive></header-directive>
-<p> Routes Param : {{id}}</p>
+<div class="login-page">
+  <div class="form">
+    <p class="add-product"> Product Details </p>  
+    <form class="login-form">
+      <input type="text" [(ngModel)]="productData.name" placeholder="name"/>
+      <input type="text" [(ngModel)]="productData.description" placeholder="description"/>
+      <input type="text" [(ngModel)]="productData.created" placeholder="created at"/>
+      <img src="http://localhost:1111/product_images/{{ productData.img_name }}" alt="Image">
+        
+<!--       <button type="button" (click)="upload()">Upload</button>-->
+<!--      <button type="button" (click)="addProduct()">Add</button>-->
+    </form>
+  </div>
+</div>
